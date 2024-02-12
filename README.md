@@ -520,3 +520,16 @@ jupyter nbconvert --to script preprocessBatch.ipynb
 # Model
 jupyter nbconvert --to script utilities.ipynb
 ```
+
+
+### 增加其 API 訪問模式
+
+```
+$ pip3 install -r requirements.txt
+$ python run.py
+$ curl -X POST -F "file=@/tmp/SN4I4H5OX2.jpg" http://localhost:5000/predict
+{
+  "captcha": "CR2R",
+  "success": true
+}
+```
