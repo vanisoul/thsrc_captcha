@@ -5,8 +5,6 @@
 
 
 import os, random, cv2
-from PIL import Image
-import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.preprocessing import binarize
 from sklearn.preprocessing import PolynomialFeatures
