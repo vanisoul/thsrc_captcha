@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 from PIL import Image
 from werkzeug.utils import secure_filename
 import os
@@ -55,7 +55,9 @@ def predict():
     os.remove(temp_path)
     os.remove(temp_path_processed)
 
-    return jsonify(success=True, captcha=predict_captcha)
+    # return jsonify(success=True, captcha=predict_captcha)
+    # Return as plain text
+    return Response(predict_captcha, mimetype='text/plain')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
