@@ -527,9 +527,13 @@ jupyter nbconvert --to script utilities.ipynb
 ```
 $ pip3 install -r requirements.txt
 $ python run.py
-$ curl -X POST -F "file=@/tmp/SN4I4H5OX2.jpg" http://localhost:5000/predict
-{
-  "captcha": "CR2R",
-  "success": true
-}
+$ curl -i -X POST -F "file=@/img/SN4I4H5OX2.jpg" http://localhost:5000/predict
+HTTP/1.1 200 OK
+Server: Werkzeug/3.0.1 Python/3.10.13
+Date: Mon, 12 Feb 2024 04:11:29 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Length: 4
+Connection: close
+
+CR2R%          
 ```
